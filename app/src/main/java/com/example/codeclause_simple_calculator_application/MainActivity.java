@@ -90,11 +90,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try{
             Scriptable scriptable = context.initStandardObjects();
             finalResult = context.evaluateString(scriptable,data,"Javascript",1,null).toString();
-//            if(finalResult.endsWith(".0"))
-//            {
-//                finalResult = finalResult.replace(".0","");
-//            }
-//            return finalResult;
+            if(finalResult.endsWith(".0"))
+            {
+                finalResult = finalResult.replace(".0","");
+            }
+            return finalResult;
         }catch (Exception e){
             finalResult = "0";
 //            return finalResult;
